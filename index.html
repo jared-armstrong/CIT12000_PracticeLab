@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class = "task1">
+</div>
+<br>
+
+<div class = "task2">
+</div>
+<br>
+
+
+<div class = "task4">
+</div>
+<br>
+
+
+<div>
+    <h1 class = "professorName"></h1>
+    <p class = "phrase"></p>
+
+</div>
+<br>
+
+
+<div>
+    <p class = "task6"></p>
+    
+</div>
+
+
+
+    
+</body>
+<script>
+
+    // Task 1
+    let response1 = document.querySelector(".task1");
+    let string1 = "";
+    let input = prompt("Please enter a number: ");
+    input = parseInt(input);
+
+    string1 += `The number you entered is ${input}<br>`;
+
+    response1.innerHTML = string1;
+
+    // Task 2
+
+    let switchLoop = document.querySelector(".task2");
+
+    let string2 = "";
+    let userResponse = prompt("Please enter your exam score: ");
+    userResponse = parseInt(userResponse);
+
+    if (userResponse > 89) {
+        grade = "A";
+    }
+
+    else if (userResponse > 79) {
+        grade = "B";
+    }
+
+    else if (userResponse > 69) {
+        grade = "C";
+    }
+
+    else if (userResponse > 59) {
+        grade = "D";
+    }
+
+    else if (userResponse <= 59 || userResponse >= 0) {
+        grade = "F";
+    }
+
+    else {
+        alert("Please enter a valid number");
+    }
+
+
+    switch(true) {
+        
+        case (userResponse < 60): 
+            switchGrade = "F";
+            break;
+        
+        case (userResponse < 70):
+            switchGrade = "D";
+            break;
+        
+        case (userResponse < 80):
+            switchGrade = "C";
+            break;
+        
+        case (userResponse < 90):
+            switchGrade = "B";
+            break;
+        
+        case (userResponse <= 100): 
+            switchGrade = "A";
+            break;
+
+        default:
+            alert("INVALID ENTRY, please try again!");
+            grade = null;
+        
+    }
+
+    string2 += `The grade is (a): ${grade}, (b): ${switchGrade}<br>`;
+    switchLoop.innerHTML = string2;
+
+
+
+// Task 3
+
+let professor1 = prompt("Who are the lines for?");
+
+let phrase1 = prompt("What is the line?");
+
+let numLines1 = prompt("How many lines?");
+numLines1 = parseInt(numLines1);
+
+for (i = 1; i < numLines1; i++) {
+
+    console.log(i + "  " + phrase1);
+
+}
+
+
+
+
+// Task 4
+
+let fourthTask = document.querySelector(".task4");
+string4 = "";
+
+let professor = prompt("Who are the lines for?");
+
+let phrase = prompt("What is the line?");
+
+let numLines = prompt("How many lines?");
+numLines = parseInt(numLines);
+
+for (i = 1; i < numLines; i++) {
+
+    string4 += `${i})   ${phrase} <br>`;
+
+    fourthTask.innerHTML = string4;
+
+}
+
+
+function umbridge() {
+    string5 = "";
+
+    let professor2 = prompt("Who are the lines for?");
+    professorName = document.querySelector(".professorName");
+
+    professorName.innerHTML = professor2;
+
+    let phrase2 = prompt("What is the line?");
+    inputPhrase = document.querySelector(".phrase");
+
+    let numLines2 = prompt("How many lines?");
+    numLines2 = parseInt(numLines2);
+
+    for (i = 1; i < numLines2; i++) {
+
+        string5 += `<li>${i}:  ${phrase2} </li>`;
+        inputPhrase.innerHTML = string5;
+
+    }
+
+}
+
+
+umbridge();
+
+
+// Task 6
+
+const UPPER_LIMIT = 12
+
+let timesTables = document.querySelector(".task6");
+
+let num = 1;
+
+let productStr = "";
+
+while (num <= 12) {
+    mathTables();
+    num++;
+
+} 
+
+
+function mathTables() {
+
+    for (index = 1; index <= UPPER_LIMIT; index++) {
+
+        let product = num * index;
+
+        productStr += `${num} X ${index} = ${product} <br><br>`;
+
+        if (index == 12) {
+            productStr += `--------------------------<br><br>`;
+        }
+
+        timesTables.innerHTML = productStr;
+
+        
+    }
+}
+
+
+</script>
+
+</html>
